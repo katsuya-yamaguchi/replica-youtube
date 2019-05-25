@@ -1,0 +1,37 @@
+$font-color: #ffffff;
+
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 0;
+  background-color: #202020;
+  height: 60px;
+}
+
+.title {
+  &:first-child {
+    margin-right: auto;
+  }
+}
+
+.title_name {
+  display: inline;
+  color: $font-color;
+  letter-spacing: -2px;
+  &:first-child {
+    margin-right: auto;
+  }
+}
+
+.title_icon {
+  display: inline;
+  color: #ff0000;
+  font-size: 2em;
+}
+
+.menu_icon {
+  color: $font-color;
+  font-size: 1.3em;
+  margin: 10px 10px 10px 10px;
+}

@@ -1,0 +1,29 @@
+@import "./common_variable";
+
+.footer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: $var-color;
+  height: 60px;
+  width: 100%;
+  bottom: 0;
+  position: absolute;
+}
+
+.menu_item {
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+  line-height: 100%;
+
+  &_icon{
+    color: $font-color;
+    font-size: 1.5em;
+  }
+
+  &_title{
+    color: $font-color;
+    font-size: 0.5em;
+  }
+}

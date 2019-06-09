@@ -12,10 +12,11 @@ const Header: React.FC = () => {
         <FontAwesomeIcon icon={["fab", "youtube"]} className={styles.title_icon} />
         <h1 className={styles.title_name}>YouTube</h1>
       </div>
-      <div>
+      <div className={styles.menu}>
         <FontAwesomeIcon icon="desktop" className={styles.menu_icon} />
         <FontAwesomeIcon icon="video" className={styles.menu_icon} />
         <FontAwesomeIcon icon="search" className={styles.menu_icon} />
+        <div className={styles.profile_img}></div>
       </div>
     </div>
   );

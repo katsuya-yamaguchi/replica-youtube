@@ -1,11 +1,11 @@
-$font-color: #ffffff;
+@import "./common_variable";
 
 .header {
   display: flex;
   flex-direction: row;
   align-items: center;
   margin: 0;
-  background-color: #202020;
+  background-color: $var-color;
   height: 60px;
 }
 
@@ -30,8 +30,20 @@ $font-color: #ffffff;
   font-size: 2em;
 }
 
+.menu {
+  display: flex;
+}
+
 .menu_icon {
   color: $font-color;
   font-size: 1.3em;
   margin: 10px 10px 10px 10px;
+}
+
+.profile_img {
+  width: 30px;
+  height: 30px;
+  margin: auto 10px auto 10px;
+  border-radius: 50%;
+  background-color: #ffffff;
 }

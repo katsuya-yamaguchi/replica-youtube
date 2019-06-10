@@ -1,22 +1,22 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import { appendFile } from 'fs';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faVideo, faSearch, faDesktop, faHome, faFire, faEnvelope, faFolder } from '@fortawesome/free-solid-svg-icons';
 import { faYoutube } from '@fortawesome/free-brands-svg-icons';
+import { BrowserRouter, Route } from 'react-router-dom';
 
-import Header from './components/header';
-import Footer from './components/footer';
-import styles from './assets/app.module.css';
+import Home from './components/home';
 
 const App: React.FC = () => {
   return (
-    <div className={styles.container}>
-      <Header />
-      <Footer />
-    </div>
+    <BrowserRouter>
+      <Route path="/" component={Home} />
+      <Route path="/trending" component={Home} />
+      <Route path="/subscriptions" component={Home} />
+      <Route path="/receive" component={Home} />
+      <Route path="/library" component={Home} />
+    </BrowserRouter>
   );
 }
 

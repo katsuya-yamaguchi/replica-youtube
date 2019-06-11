@@ -6,19 +6,10 @@ import Button from '@material-ui/core/Button';
 import grey from '@material-ui/core/colors/grey';
 import { makeStyles } from '@material-ui/styles'
 
-const useStyles = makeStyles({
-  root: {
-    '&:hover': {
-      backgroundColor: grey[800],
-    },
-  },
-});
-
 const Footer: React.FC = () => {
-  const classes = useStyles();
   return(
     <div className={styles.footer}>
-      <Button className={classes.root}> 
+      <Button> 
         <Link to="/home" className={styles.menu_link}>
           <div className={styles.menu_item}>
             <FontAwesomeIcon icon="home" className={styles.menu_item_icon} />
@@ -26,7 +17,7 @@ const Footer: React.FC = () => {
           </div>
         </Link>
       </Button>
-      <Button className={classes.root}> 
+      <Button> 
         <Link to="/trending" className={styles.menu_link}>
           <div className={styles.menu_item}>
             <FontAwesomeIcon icon="fire" className={styles.menu_item_icon} />
@@ -34,7 +25,7 @@ const Footer: React.FC = () => {
           </div>
         </Link>
       </Button>
-      <Button className={classes.root}> 
+      <Button> 
         <Link to="/subscriptions" className={styles.menu_link}>
           <div className={styles.menu_item}>
             <FontAwesomeIcon icon={["fab", "youtube"]} className={styles.menu_item_icon} />
@@ -42,7 +33,7 @@ const Footer: React.FC = () => {
           </div>
         </Link>
       </Button>
-      <Button className={classes.root}> 
+      <Button> 
         <Link to="/receive" className={styles.menu_link}>
           <div className={styles.menu_item}>
             <FontAwesomeIcon icon="envelope" className={styles.menu_item_icon} />
@@ -50,7 +41,7 @@ const Footer: React.FC = () => {
           </div>
         </Link>
       </Button>
-      <Button className={classes.root}> 
+      <Button> 
         <Link to="/library" className={styles.menu_link}>
           <div className={styles.menu_item}>
             <FontAwesomeIcon icon="folder" className={styles.menu_item_icon} />

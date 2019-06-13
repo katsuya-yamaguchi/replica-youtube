@@ -1,13 +1,13 @@
-import React from 'react';
-import styles from '../assets/home.module.scss';
-import Header from './header';
-import Footer from './footer';
+import React from "react";
+import styles from "../assets/home.module.scss";
+import Footer from "./footer";
+import Header from "./header";
 
-import Card from '@material-ui/core/Card';
-import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
-import { createStyles, makeStyles } from '@material-ui/core/styles';
-import { style } from '@material-ui/system';
+import Card from "@material-ui/core/Card";
+import CardContent from "@material-ui/core/CardContent";
+import CardMedia from "@material-ui/core/CardMedia";
+import { createStyles, makeStyles } from "@material-ui/core/styles";
+import { style } from "@material-ui/system";
 
 const Home: React.FC = () => {
   const cardStyles = makeStyles(
@@ -15,9 +15,9 @@ const Home: React.FC = () => {
       root: {
         marginTop: "30px",
         backgroundColor: "rgba(0, 0, 0, 1)",
-      }
-    })
-  )
+      },
+    }),
+  );
   const classes = cardStyles();
 
   return(
@@ -33,7 +33,7 @@ const Home: React.FC = () => {
             title="Sample image"
           />
           <CardContent className={styles.detail}>
-            <div className={styles.profile_icon}></div>
+            <div className={styles.profile_icon}/>
             <div className={styles.info}>
               <h2 className={styles.item_title}>Sample</h2>
               <div className={styles.item_info}>
@@ -46,6 +46,6 @@ const Home: React.FC = () => {
       <Footer />
     </div>
   );
-}
+};
 
 export default Home;

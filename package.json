@@ -25,13 +25,16 @@
     "react-router-dom": "^5.0.1",
     "react-scripts": "3.0.1",
     "redux": "^4.0.1",
+    "tslint": "^5.17.0",
+    "tslint-react": "^4.0.0",
     "typescript": "3.4.5"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "tslint": "tslint --fix --force --project ./tsconfig.json --format stylish src/**/*.{ts,tsx}"
   },
   "eslintConfig": {
     "extends": "react-app"

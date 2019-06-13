@@ -5,7 +5,6 @@ import styles from "../assets/header.module.scss";
 
 const Header: React.FC = () => {
   const menuIcon = classNames(styles.common, styles.menu);
-  console.log(typeof menuIcon);
   return(
     <div className={styles.header}>
       <div className={styles.title}>

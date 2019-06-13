@@ -13,8 +13,8 @@ const Home: React.FC = () => {
   const cardStyles = makeStyles(
     createStyles({
       root: {
-        marginTop: "30px",
         backgroundColor: "rgba(0, 0, 0, 1)",
+        marginTop: "30px",
       },
     }),
   );

@@ -88,6 +88,7 @@ const Home: React.FC = () => {
           loadMore={loadVideos}
           pageStart={0}
           hasMore={true}
+          className={styles.items}
         >
           {items}
         </InfiniteScroll>

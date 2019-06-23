@@ -1,0 +1,15 @@
+{
+    "defaultSeverity": "error",
+    "extends": [
+        "tslint:recommended",
+        "tslint-react"
+    ],
+    "linterOptions": {
+        "exclude": [
+            "src/serviceWorker.ts"
+        ]
+    },
+    "jsRules": {},
+    "rules": {},
+    "rulesDirectory": []
+}

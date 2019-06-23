@@ -1,15 +1,15 @@
-import React from 'react';
-import styles from '../assets/footer.module.scss';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Link } from 'react-router-dom';
-import Button from '@material-ui/core/Button';
-import grey from '@material-ui/core/colors/grey';
-import { makeStyles } from '@material-ui/styles'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Button from "@material-ui/core/Button";
+import grey from "@material-ui/core/colors/grey";
+import { makeStyles } from "@material-ui/styles";
+import React from "react";
+import { Link } from "react-router-dom";
+import styles from "../assets/footer.module.scss";
 
 const Footer: React.FC = () => {
   return(
     <div className={styles.footer}>
-      <Button> 
+      <Button>
         <Link to="/home" className={styles.menu_link}>
           <div className={styles.menu_item}>
             <FontAwesomeIcon icon="home" className={styles.menu_item_icon} />
@@ -17,7 +17,7 @@ const Footer: React.FC = () => {
           </div>
         </Link>
       </Button>
-      <Button> 
+      <Button>
         <Link to="/trending" className={styles.menu_link}>
           <div className={styles.menu_item}>
             <FontAwesomeIcon icon="fire" className={styles.menu_item_icon} />
@@ -25,7 +25,7 @@ const Footer: React.FC = () => {
           </div>
         </Link>
       </Button>
-      <Button> 
+      <Button>
         <Link to="/subscriptions" className={styles.menu_link}>
           <div className={styles.menu_item}>
             <FontAwesomeIcon icon={["fab", "youtube"]} className={styles.menu_item_icon} />
@@ -33,7 +33,7 @@ const Footer: React.FC = () => {
           </div>
         </Link>
       </Button>
-      <Button> 
+      <Button>
         <Link to="/receive" className={styles.menu_link}>
           <div className={styles.menu_item}>
             <FontAwesomeIcon icon="envelope" className={styles.menu_item_icon} />
@@ -41,7 +41,7 @@ const Footer: React.FC = () => {
           </div>
         </Link>
       </Button>
-      <Button> 
+      <Button>
         <Link to="/library" className={styles.menu_link}>
           <div className={styles.menu_item}>
             <FontAwesomeIcon icon="folder" className={styles.menu_item_icon} />
@@ -51,6 +51,6 @@ const Footer: React.FC = () => {
       </Button>
     </div>
   );
-}
+};
 
 export default Footer;

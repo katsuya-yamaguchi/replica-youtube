@@ -64,26 +64,6 @@ const Home: React.FC = () => {
     <div>
       <Header />
 
-        <Card className={classes.root}>
-          <CardMedia
-            component="img"
-            alt="Sample image"
-            height="140"
-            image="./sample.jpg"
-            title="Sample image"
-          />
-          <CardContent className={styles.detail}>
-            <div className={styles.profile_icon}/>
-            <div className={styles.info}>
-              <h2 className={styles.item_title}>Sample</h2>
-              <div className={styles.item_info}>
-                <p className={styles.para}>東海オンエア・183万回視聴・20時間前</p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-
-
         <InfiniteScroll
           loadMore={loadVideos}
           pageStart={0}
@@ -92,6 +72,7 @@ const Home: React.FC = () => {
         >
           {items}
         </InfiniteScroll>
+
       <Footer />
     </div>
   );

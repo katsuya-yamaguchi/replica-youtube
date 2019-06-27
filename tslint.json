@@ -11,5 +11,6 @@
     },
     "jsRules": {},
     "rules": {},
-    "rulesDirectory": []
+    "rulesDirectory": [],
+    "interface-name": [false]
 }

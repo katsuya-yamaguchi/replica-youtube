@@ -9,7 +9,12 @@ import CardMedia from "@material-ui/core/CardMedia";
 import { createStyles, makeStyles } from "@material-ui/core/styles";
 import InfiniteScroll from 'react-infinite-scroller';
 
-const Home: React.FC = () => {
+interface AddItemProps {
+  tracks: string[];
+  addItems: (item: string) => void;
+}
+
+const Home: React.FC<AddItemProps> = (props) => {
   const cardStyles = makeStyles(
     createStyles({
       root: {
@@ -20,15 +25,13 @@ const Home: React.FC = () => {
   );
   const classes = cardStyles();
   
-  const [tracks, setTracks] = useState([]);
-
   const loadVideos = () => {
     fetch('https://replica-youtube-api.herokuapp.com/videos', {mode: 'cors'})
       .then(res => {
         return res.json();
       })
       .then(d => {
-        setTracks(d)
+        props.addItems(JSON.stringify(d))
       })
       .catch(err => {
         console.log(err.message)
@@ -37,7 +40,8 @@ const Home: React.FC = () => {
 
   var items: Array<any> = [];
 
-  tracks.map((track: any) => {
+  console.log(props.tracks[0])
+  props.tracks.map((track: any) => {
     items.push(
       <Card className={classes.root}>
         <CardMedia

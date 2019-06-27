@@ -6,7 +6,7 @@ import { faVideo, faSearch, faDesktop, faHome, faFire, faEnvelope, faFolder } fr
 import { faYoutube } from '@fortawesome/free-brands-svg-icons';
 import { BrowserRouter, Route } from 'react-router-dom';
 
-import Home from './components/home';
+import Home from './containers/home';
 
 const App: React.FC = () => {
   return (

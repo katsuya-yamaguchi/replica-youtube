@@ -1,4 +1,3 @@
-import React, { useState, useEffect } from "react";
 import styles from "../assets/home.module.scss";
 import Footer from "./footer";
 import Header from "./header";
@@ -7,11 +6,13 @@ import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import { createStyles, makeStyles } from "@material-ui/core/styles";
-import InfiniteScroll from 'react-infinite-scroller';
+import InfiniteScroll from "react-infinite-scroller";
 
 interface AddItemProps {
-  tracks: string[];
-  addItems: (item: string) => void;
+  flag: boolean;
+  tracks: object[];
+  addItems: (item: object) => void;
+  hasMore: (flag: boolean) => void;
 }
 
 const Home: React.FC<AddItemProps> = (props) => {
@@ -24,57 +25,60 @@ const Home: React.FC<AddItemProps> = (props) => {
     }),
   );
   const classes = cardStyles();
-  
+
   const loadVideos = () => {
     fetch('https://replica-youtube-api.herokuapp.com/videos', {mode: 'cors'})
-      .then(res => {
-        return res.json();
+      .then((response) => {
+        return response.json();
       })
-      .then(d => {
-        props.addItems(JSON.stringify(d))
+      .then((json) => {
+        Object.keys(json).forEach( key => {
+          props.addItems(json[key]);
+        });
+        if (json) {
+          props.hasMore(false);
+        }
       })
-      .catch(err => {
-        console.log(err.message)
-      })
-  }
-
-  var items: Array<any> = [];
-
-  console.log(props.tracks[0])
-  props.tracks.map((track: any) => {
-    items.push(
-      <Card className={classes.root}>
-        <CardMedia
-          component="img"
-          alt="Sample image"
-          height="140"
-          image="./sample.jpg"
-          title="Sample image"
-        />
-        <CardContent className={styles.detail}>
-          <div className={styles.profile_icon}/>
-          <div className={styles.info}>
-            <h2 className={styles.item_title}>{track.title}</h2>
-            <div className={styles.item_info}>
-              <p className={styles.para}>{track.account + '・' + track.num_of_views + '回視聴' + '・' + '20時間前'}</p>
-            </div>
-          </div>
-        </CardContent>
-      </Card>
-    )
-  })
+      .catch((error) => {
+        console.log(error.message);
+      });
+  };
 
   return(
     <div>
       <Header />
 
         <InfiniteScroll
+          initialLoad={false}
           loadMore={loadVideos}
           pageStart={0}
-          hasMore={true}
+          hasMore={props.flag}
           className={styles.items}
         >
-          {items}
+          {
+            props.tracks.map((track: any, key: number) => {
+              return(
+                <Card className={classes.root} key={key}>
+                  <CardMedia
+                    component="img"
+                    alt="Sample image"
+                    height="140"
+                    image="./sample.jpg"
+                    title="Sample image"
+                  />
+                  <CardContent className={styles.detail}>
+                    <div className={styles.profile_icon}/>
+                    <div className={styles.info}>
+                      <h2 className={styles.item_title}>{track.title}</h2>
+                      <div className={styles.item_info}>
+                        <p className={styles.para}>{track.account + '・' + track.num_of_views + '回視聴' + '・' + '20時間前'}</p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              )
+            })
+          }
         </InfiniteScroll>
 
       <Footer />

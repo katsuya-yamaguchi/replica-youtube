@@ -1,15 +1,17 @@
 import { connect } from 'react-redux';
 import { bindActionCreators, Dispatch } from 'redux';
-import { actionTypes, addItems } from '../actions/actions';
+import { actionTypes, addItems, hasMore } from '../actions/actions';
 import Home from '../components/home';
 import * as MyTypes from 'MyTypes';
 
 const mapStateToProps = (state: MyTypes.ReducerState) => ({
+  flag: state.loadItems,
   tracks: state.infinitScroll,
 });
 
 const mapDispatchToProps = (dispatch: Dispatch<MyTypes.RootAction>) => ({
-  addItems: (item: string) => dispatch({ type: actionTypes.ADD, payload: item }),
+  addItems: (item: object) => dispatch(addItems(item)),
+  hasMore: (flag: boolean) => dispatch(hasMore(flag)),
 });
 
 export default connect(

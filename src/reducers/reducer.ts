@@ -13,13 +13,8 @@ export const initialState: infinitState = {
   tracks: [],
 };
 
-const infinitScroll = createReducer<object[], MyTypes.RootAction>(initialState.tracks)
+export const infinitScroll = createReducer<object[], MyTypes.RootAction>(initialState.tracks)
   .handleAction(actionTypes.ADD, (state, action) => [...state, action.payload]);
 
-const loadItems = createReducer<boolean, MyTypes.RootAction>(initialState.flag)
+export const loadItems = createReducer<boolean, MyTypes.RootAction>(initialState.flag)
   .handleAction(actionTypes.LOAD, (state, action) => action.payload);
-
-export default combineReducers({
-  infinitScroll: infinitScroll,
-  loadItems: loadItems
-});

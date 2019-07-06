@@ -1,3 +1,4 @@
+import React from 'react';
 import styles from "../assets/home.module.scss";
 import Footer from "./footer";
 import Header from "./header";

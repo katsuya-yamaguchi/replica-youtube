@@ -1,14 +1,13 @@
-import * as MyTypes from 'MyTypes';
-import { combineReducers } from 'redux';
+import * as MyTypes from "MyTypes";
 import { createReducer } from "typesafe-actions";
-import { actionTypes } from '../actions/actions';
+import { actionTypes } from "../actions/actions";
 
-export interface infinitState {
+export interface InfinitState {
   flag: boolean;
   tracks: object[];
 }
 
-export const initialState: infinitState = {
+export const initialState: InfinitState = {
   flag: true,
   tracks: [],
 };

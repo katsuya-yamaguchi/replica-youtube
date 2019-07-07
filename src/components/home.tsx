@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import styles from "../assets/home.module.scss";
 import Footer from "./footer";
 import Header from "./header";
@@ -28,12 +28,12 @@ const Home: React.FC<AddItemProps> = (props) => {
   const classes = cardStyles();
 
   const loadVideos = () => {
-    fetch('https://replica-youtube-api.herokuapp.com/videos', {mode: 'cors'})
+    fetch("https://replica-youtube-api.herokuapp.com/videos", {mode: "cors"})
       .then((response) => {
         return response.json();
       })
       .then((json) => {
-        Object.keys(json).forEach( key => {
+        Object.keys(json).forEach( (key) => {
           props.addItems(json[key]);
         });
         if (json) {
@@ -41,6 +41,7 @@ const Home: React.FC<AddItemProps> = (props) => {
         }
       })
       .catch((error) => {
+        // tslint:disable-next-line: no-console
         console.log(error.message);
       });
   };
@@ -57,6 +58,7 @@ const Home: React.FC<AddItemProps> = (props) => {
           className={styles.items}
         >
           {
+            // tslint:disable-next-line: jsx-no-multiline-js
             props.tracks.map((track: any, key: number) => {
               return(
                 <Card className={classes.root} key={key}>
@@ -72,12 +74,14 @@ const Home: React.FC<AddItemProps> = (props) => {
                     <div className={styles.info}>
                       <h2 className={styles.item_title}>{track.title}</h2>
                       <div className={styles.item_info}>
-                        <p className={styles.para}>{track.account + '・' + track.num_of_views + '回視聴' + '・' + '20時間前'}</p>
+                        <p className={styles.para}>
+                          {track.account + "・" + track.num_of_views + "回視聴" + "・" + "20時間前"}
+                        </p>
                       </div>
                     </div>
                   </CardContent>
                 </Card>
-              )
+              );
             })
           }
         </InfiniteScroll>

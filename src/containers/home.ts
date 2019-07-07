@@ -1,8 +1,8 @@
-import { connect } from 'react-redux';
-import { bindActionCreators, Dispatch } from 'redux';
-import { actionTypes, addItems, hasMore } from '../actions/actions';
-import Home from '../components/home';
-import * as MyTypes from 'MyTypes';
+import * as MyTypes from "MyTypes";
+import { connect } from "react-redux";
+import { bindActionCreators, Dispatch } from "redux";
+import { actionTypes, addItems, hasMore } from "../actions/actions";
+import Home from "../components/home";
 
 const mapStateToProps = (state: MyTypes.ReducerState) => ({
   flag: state.loadItems,
@@ -16,5 +16,5 @@ const mapDispatchToProps = (dispatch: Dispatch<MyTypes.RootAction>) => ({
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(Home);

@@ -10,7 +10,8 @@
         ]
     },
     "jsRules": {},
-    "rules": {},
-    "rulesDirectory": [],
-    "interface-name": [false]
+    "rules": {
+      "interface-name": [false]
+    },
+    "rulesDirectory": []
 }

@@ -14,9 +14,9 @@ interface AddItemProps {
   tracks: object[];
   addItems: (item: object) => void;
   hasMore: (flag: boolean) => void;
-}
+};
 
-const Home: React.FC<AddItemProps> = (props) => {
+const Home: React.FC<AddItemProps> = ({ flag, tracks, addItems, hasMore }) => {
   const cardStyles = makeStyles(
     createStyles({
       root: {
@@ -34,10 +34,10 @@ const Home: React.FC<AddItemProps> = (props) => {
       })
       .then((json) => {
         Object.keys(json).forEach( (key) => {
-          props.addItems(json[key]);
+          addItems(json[key]);
         });
         if (json) {
-          props.hasMore(false);
+          hasMore(false);
         }
       })
       .catch((error) => {
@@ -54,12 +54,12 @@ const Home: React.FC<AddItemProps> = (props) => {
           initialLoad={false}
           loadMore={loadVideos}
           pageStart={0}
-          hasMore={props.flag}
+          hasMore={flag}
           className={styles.items}
         >
           {
             // tslint:disable-next-line: jsx-no-multiline-js
-            props.tracks.map((track: any, key: number) => {
+            tracks.map((track: any, key: number) => {
               return(
                 <Card className={classes.root} key={key}>
                   <CardMedia

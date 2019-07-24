@@ -7,15 +7,16 @@ import { faYoutube } from '@fortawesome/free-brands-svg-icons';
 import { BrowserRouter, Route } from 'react-router-dom';
 
 import Home from './containers/home';
+import Video from './containers/video';
 
 const App: React.FC = () => {
   return (
     <BrowserRouter>
-      <Route path="/" component={Home} />
-      <Route path="/trending" component={Home} />
-      <Route path="/subscriptions" component={Home} />
-      <Route path="/receive" component={Home} />
-      <Route path="/library" component={Home} />
+      <Route exact={true} path="/" component={Home} />
+      <Route exact={true} path="/trending" component={Video} />
+      <Route exact={true} path="/subscriptions" component={Home} />
+      <Route exact={true} path="/receive" component={Home} />
+      <Route exact={true} path="/library" component={Home} />
     </BrowserRouter>
   );
 }

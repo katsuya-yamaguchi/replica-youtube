@@ -1,6 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Button from "@material-ui/core/Button";
-import grey from "@material-ui/core/colors/grey";
 import { makeStyles } from "@material-ui/styles";
 import React from "react";
 import { Link } from "react-router-dom";
@@ -10,7 +9,7 @@ const Footer: React.FC = () => {
   return(
     <div className={styles.footer}>
       <Button>
-        <Link to="/home" className={styles.menu_link}>
+        <Link to="/" className={styles.menu_link}>
           <div className={styles.menu_item}>
             <FontAwesomeIcon icon="home" className={styles.menu_item_icon} />
             <div className={styles.menu_item_title}>ホーム</div>
